@@ -9,18 +9,28 @@ import android.view.View.OnTouchListener;
 import android.widget.ImageView;
 
 public class OnTouchDemoActivity extends Activity implements OnTouchListener {
-    /** Called when the activity is first created. */
+	 
     @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.main);
-        
-        ImageView ivFacebook = (ImageView)findViewById(R.id.iv_facebook);
-        
-        ivFacebook.setOnTouchListener(this);
-        ivFacebook.setClickable(true);
-    }
+	public void onCreate(Bundle savedInstanceState) {
 
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.main);
+
+		ImageView ivFacebook = (ImageView) findViewById(R.id.iv_facebook);
+		ivFacebook.setOnTouchListener(this);
+		ivFacebook.setClickable(true); 			//> If you set this, you can get all the touch-actions
+	}
+
+	@Override
+	protected void onResume() {
+		super.onResume();
+	}
+
+	@Override
+	protected void onPause() {
+		super.onPause();
+	}
+    
 	@Override
 	public boolean onTouch(View v, MotionEvent event) {
 		
@@ -42,9 +52,6 @@ public class OnTouchDemoActivity extends Activity implements OnTouchListener {
         		Log.d("TAG", "OnTouch : ACTION_MOVE");
     		}
         }
-		
 		return false;
 	}
-    
-    
 }

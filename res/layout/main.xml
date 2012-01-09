@@ -12,6 +12,7 @@
 		android:background="@drawable/img_facebook"
 		android:contentDescription="@string/todo"
 		android:layout_gravity="center"
+		android:clickable="true"
 		/>
 
 </LinearLayout>
