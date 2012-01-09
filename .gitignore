@@ -2,4 +2,6 @@
 *.apk
 *.dex
 *.ap_
+bin
+/bin
 
